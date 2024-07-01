@@ -1,0 +1,231 @@
+/* --------------------------------------------------colors and sizes------------------------------------------------------- */
+
+:root {
+
+    /* Colors */
+    --clr-dark: #333333;
+    --clr-white: #ffffff;
+    --clr-light: #f1f5f9;
+    --clr-neutral200: #e5e5e5;
+    --clr-neutral400: #a3a3a3;
+    --clr-neutral600: #525252;
+    --clr-neutral800: #262626;
+    --clr-gray500: #6b7280;
+    --clr-gray300: #d1d5db;
+    --clr-main: #FCC822;
+    --clr-mainSwitch: #191401;
+    --clr-yellow300: #fde047;
+    --clr-yellow500: #facc15;
+    --clr-yellow700: #eab308;
+    --clr-red600: #f43f5e;
+    --clr-dark2: #333331;
+    /* --clr-green200: #d9f99d; */
+
+    /* main 	rgb(252, 200, 34) */
+
+    /* Sizes */
+    --size-xxs: 0.5rem;
+    --size-xs: 0.75rem;
+    --size-sm: 0.875rem;
+    --size-base: 1rem;
+    --size-lg: 1.125rem;
+    --size-xl: 1.25rem;
+    --size-2xl: 1.5rem;
+    --size-3xl: 1.875rem;
+    --size-4xl: 2.25rem;
+    --size-5xl: 3rem;
+    --size-6xl: 3.75rem;
+    --size-7xl: 4.5rem;
+    --size-8xl: 6rem;
+    --size-9xl: 8rem;
+    --size-10xl: 10rem;
+}
+
+/*-----------------------------------Dark theme--------------------------------------------*/
+
+.dark_mode {
+    --clr-dark: #ffffff;
+    --clr-white: #333333;
+    --clr-light: #262626;
+    --clr-neutral800: #f1f5f9;
+    --clr-mainSwitch: #FCC822;
+    --clr-dark2: #FCC822;
+}
+
+.dark_mode .theme_btn {
+    color: var(--clr-dark);
+    background-color: var(--clr-white);
+}
+
+.dark_mode .theme_btn:hover {
+    color: var(--clr-white) !important;
+    background-color: var(--clr-dark) !important;
+}
+
+/* Dark mode styles for offcanvas menu */
+.dark_mode .offcanvas {
+    background-color: var(--clr-white) !important;
+    color: var(--clr-dark) !important;
+}
+
+.dark_mode .offcanvas-header, .dark_mode .offcanvas-body {
+    background-color: var(--clr-white) !important;
+    color: var(--clr-dark) !important;
+}
+
+.dark_mode .offcanvas .nav-link {
+    color: var(--clr-dark) !important;
+    background-color: var(--clr-main);
+    border: none;
+}
+
+.dark_mode .offcanvas .nav-link:hover {
+    color: var(--clr-main) !important;
+    background-color: var(--clr-dark);
+}
+
+.dark_mode .offcanvas .btn-close {
+    filter: invert(1); /* To make the close button visible in dark mode */
+}
+/*-------------------------------------General Styles-----------------------------------------*/
+
+* {
+    margin: 0;
+    line-height: calc(1em + 0.5rem);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-family: "Roboto", sans-serif;
+    color: var(--clr-dark);
+    font-weight: 100;
+}
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    /* border: 1px solid red; */
+}
+
+.section {
+    margin-top: 5rem;
+}
+
+/*----------------------------------------Buttons Styles---------------------------------------*/
+
+.btn {
+    display: inline-block;
+    width: fit-content;
+    font-weight: 300;
+    text-decoration: none;
+    letter-spacing: -0.05em;
+    background-color: var(--clr-main);
+    color: var(--clr-light);
+    padding: 0.5em 1em;
+    border-radius: 6px;
+    box-shadow: 0 4px 5px rgba(252, 200, 34, 0.5), 
+                0 3px 3px rgba(234, 192, 51, 0.5), 
+                0 0 10px -10px var(--clr-main) ;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(234, 192, 51, 0.25), 
+                0 10px 10px rgba(234, 192, 51, 0.25), 
+                0 0 10px -10px var(--clr-main) ;
+    color: var(--clr-mainSwitch);            
+}
+
+.theme_btn {
+    display: inline-block;
+    font-weight: 300;
+    text-decoration: none;
+    letter-spacing: -0.05em;
+    background-color: var(--clr-white);
+    color: var(--clr-dark);
+    transition: color 0.3s, background-color 0.3s;
+    padding: 0.5em 1em;
+    border-radius: 6px;
+    box-shadow: 0 10px 10px rgba(60, 60, 60, 0.5), 
+                0 6px 6px rgba(70, 70, 70, 0.5), 
+                0 0 10px -10px var(--clr-dark) ;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.theme_btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(70, 70, 70, 0.25), 
+                0 10px 10px rgba(70, 70, 70, 0.25), 
+                0 0 120px -10px var(--clr-dark) ;
+    color: var(--clr-white);   
+    background-color: var(--clr-dark);
+}
+
+/* ----------------------------------------media queries section------------------------------------------------------------- */
+
+/* 2xl */
+/* @media (max-width: 1536px) {} */
+
+/* xl */
+/* @media (max-width: 1280px) {} */
+
+/* lg */
+/* @media (max-width: 1024px) {} */
+
+/* md */
+/* @media (max-width: 768px) {} */
+
+/* sm */
+/* @media (max-width: 640px) {} */
+
+/* xs */
+/* @media (max-width: 475px) {} */
+
+/* 2xl */
+@media (max-width: 1536px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+  /* xl */
+@media (max-width: 1280px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+/* lg */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+/* md */
+@media (max-width: 768px) {
+    .container {
+        max-width: 640px;
+    }
+}
+
+/* sm */
+@media (max-width: 640px) {
+    .container {
+        max-width: 475px;
+    }
+}
+
+/* xs */
+@media (max-width: 475px) {
+    .container {
+        width: 100%;
+    }
+}
