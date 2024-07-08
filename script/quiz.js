@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 questions = data[quizType];
                 currentQuestionIndex = 0;
                 loadQuestion(currentQuestionIndex);
-                startTimer(300); // Start timer for 60 seconds
+                startTimer(180); // Start timer for 3 minutes
             })
             .catch(error => console.error('Error fetching quiz data:', error));
     }
@@ -146,6 +146,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Load the audio files
         const passAudio = new Audio('../media/audio/claps-44774.mp3');
         const failAudio = new Audio('../media/audio/wah-wah-sad-trombone-6347.mp3');
+
+        // Apply blur/opacity effect to the main content
+        document.querySelector('main').classList.add('main-blurred');
 
         
         if (score >= Math.ceil(0.5 * questions.length)) { // Assuming 50% of total questions, Example we are at question 3 => 0.5 * 3 = 1.5, Now the ceil function turns 1.5 to 1

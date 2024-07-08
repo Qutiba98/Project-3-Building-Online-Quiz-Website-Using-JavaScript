@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const themeButton = document.querySelector('.theme_btn');
+    const themeButton = document.querySelector('.click_btn');
     const imgElement = document.querySelector('.right img');
     const login = document.querySelector('#login_btn');
     const signup = document.querySelector('#sign_up');
     const logout = document.querySelector('#logout');
-
+    const button_color =  document.querySelector("i");
 
 
     if (sessionStorage.getItem('currentUser')) {
@@ -28,14 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.toggle('dark_mode');
 
         if (document.body.classList.contains('dark_mode')) {
-            themeButton.textContent = 'Light Theme';
-            imgElement.src = imgElement.getAttribute('data-dark-src');
-        } else {
-            themeButton.textContent = 'Dark Theme';
-            imgElement.src = imgElement.src.replace('QuizPicDark.jpg', 'QuizPicLight.png');
-        }
-
-        if (document.body.classList.contains('dark_mode')) {
             localStorage.setItem('theme', 'dark');
         } else {
             localStorage.removeItem('theme');
@@ -46,9 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (localStorage.getItem('theme') === 'dark') {
         document.body.classList.add('dark_mode');
-        themeButton.textContent = 'Light Theme';
-        imgElement.src = imgElement.getAttribute('data-dark-src');
-    }
+        // button_color.style.color = "var(--clr-mainSwitch)";
+    } 
 });
 
 // tryQuiz button function 
@@ -63,14 +54,13 @@ function checkIfSession() {
     }
 }
 
+
 function searchVideos() {
-    const apiKey = 'AIzaSyA39UQG9KZjyfUEsyPHW_RjL7LeDiU_VY8';
+    const apiKey = 'AIzaSyD93xGsuAIJ1np90g-AawL_2iWko44MMdg'; 
     const video = document.getElementById("vid");
-    const query = "zaid";  // Replace with your desired search query
+    const CHANNEL_ID = "UC6SPQ1_Q8b8k1n0Rb8wfyoA"; 
 
-    console.log('Fetching videos for query:', query);
-
-    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&key=${apiKey}`)
+    fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=1`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
@@ -91,3 +81,7 @@ function searchVideos() {
 
 // Call searchVideos when the page loads
 window.onload = searchVideos;
+
+//Spare keys = 'AIzaSyDG-NJrJ18z6GRjufPFyJdEGcBfvvjkSGM'
+//Spare keys = 'AIzaSyAyfZEJKblYSwUwHEJybFQTq4rb9YBqkKA'
+//Spare keys = 'AIzaSyB2pS-OTTUJhjXP9xwl1vuUuk2YolD2cEU'

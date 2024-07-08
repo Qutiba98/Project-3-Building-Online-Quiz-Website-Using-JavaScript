@@ -20,7 +20,12 @@ function login() {
                     sessionStorage.setItem('currentUser', JSON.stringify({ 
                         id: userData.id, 
                         fullname: userData.fullname,
-                        email: userData.email
+                        email: userData.email,
+                        scores: {
+                            "html": 0,
+                            "css": 0,
+                            "javascript": 0
+                        }
                     }));
 
                     // Debugging: Check session storage
@@ -81,6 +86,7 @@ function login() {
 
 // Add event listener to the login button
 document.getElementById("login").addEventListener("click", login);
+
 
 // Check for dark mode preference and apply it
 if (localStorage.getItem('theme') === 'dark') {
